@@ -528,39 +528,40 @@ function keyDown(event) {
 function getrandom(x) {
   return Math.floor(Math.random() * x);
 }
-function geth(){
-  $.ajax({
-    url: "gethistory",
-    method:'GET',
-    error:(err)=>{console.log(err)},
-    success: function (result) {
-      console.log(result);
-    }
-  });
-}
-function getuser(){
-  $.ajax({
-    url: "getuser",
-    method:'GET',
-    error:(err)=>{console.log(err)},
-    success: function (result) {
-      user=result.user;
-      if(user.score_sum <77777)reach=false;
-      else reach=true;
-    }
-  });
-}
+// function geth(){
+//   $.ajax({
+//     url: "gethistory",
+//     method:'GET',
+//     error:(err)=>{console.log(err)},
+//     success: function (result) {
+//       console.log(result);
+//     }
+//   });
+// }
+// function getuser(){
+//   $.ajax({
+//     url: "getuser",
+//     method:'GET',
+//     error:(err)=>{console.log(err)},
+//     success: function (result) {
+//       user=result.user;
+//       if(user.score_sum <77777)reach=false;
+//       else reach=true;
+//     }
+//   });
+// }
 function load_question_data() {
-  $.ajax({
-    url: "getquestion",
-    method:'GET',
-    dataType:'JSON',
-    error:(err)=>{console.log(err)},
-    success: function (result) {
-      question_data=result.result;
-      load_question();
-    }
-  });
+  // $.ajax({
+  //   url: "getquestion",
+  //   method:'GET',
+  //   dataType:'JSON',
+  //   error:(err)=>{console.log(err)},
+  //   success: function (result) {
+  //     question_data=result.result;
+  //     load_question();
+  //   }
+  // });
+  load_question();
 }
 function create_bubble() {
   //var bubble = new createjs.Bitmap(loader.getResult("bubble"+(getrandom(100)<=5?7:((getrandom(6)+1)))));
@@ -1283,30 +1284,30 @@ function create_question_end_container() {
   question_end_container.visible = false;
   stage.addChildAt(question_end_container, stage.numChildren - 1);
 }
-function usergame_init(){
-  $.ajax({
-    url: "usergameinit",
-    method:"get",
-  success:()=>{
+// function usergame_init(){
+//   $.ajax({
+//     url: "usergameinit",
+//     method:"get",
+//   success:()=>{
 
-  },
-    error:(err)=>{console.log(err)}
-  });
-}
-function update_score(){
-  $.ajax({
-    url: "updatescore",
-    method:"POST",
-    data: { 
-      game_id : game_id,
-      score: user_score,
-  },
-  success:()=>{
+//   },
+//     error:(err)=>{console.log(err)}
+//   });
+// }
+// function update_score(){
+//   $.ajax({
+//     url: "updatescore",
+//     method:"POST",
+//     data: { 
+//       game_id : game_id,
+//       score: user_score,
+//   },
+//   success:()=>{
 
-  },
-    error:(err)=>{console.log(err)}
-  });
-}
+//   },
+//     error:(err)=>{console.log(err)}
+//   });
+// }
 function question_end() {
   if(dolphin_list.length == 0){
     stage.removeChild(question_container);
@@ -1321,7 +1322,7 @@ function question_end() {
     })
     clearInterval(question_timer);
     clearInterval(score_update_timer);
-    update_score();
+    //update_score();
   }
   else{
     back_container.visible=false;
@@ -1587,7 +1588,7 @@ function create_dolphin_container(){
     dolphin_container.visible=false;
     clearInterval(question_timer);
     new Score_Text(""+animalsource[6].score,"bold 30px Arial","#000000",score_board.getwidth()/2+score_board.x,score_board_text.y);
-    update_score();
+    //update_score();
     });
   stage.addChild(dolphin_container);
 }
@@ -1847,14 +1848,14 @@ function game_start() {
   open_bubble();
   open_fish();
   open_bird();
-  $.ajax({
-    url:"startgame",
-    method:'GET',
-    error:(err)=>{console.log("err")},
-    success: function (result) {
-      game_id = result.game_id;
-    }
-  });
+  // $.ajax({
+  //   url:"startgame",
+  //   method:'GET',
+  //   error:(err)=>{console.log("err")},
+  //   success: function (result) {
+  //     game_id = result.game_id;
+  //   }
+  // });
   BGM_change();
 }
 function game_init() {
@@ -1976,29 +1977,29 @@ function create_labbybutton() {
   labbybutton_container.y = 200;
   stage.addChild(labbybutton_container);
 }
-function get_totalrank(){
-  now=4;
-  $.ajax({
-    url: "gettotalrank",
-    method:'GET',
-    error:(err)=>{console.log(err)},
-    success: function (result) {
-      rank_user_list = result;
-      update_rank();
-    }
-  });
-}
+// function get_totalrank(){
+//   now=4;
+//   $.ajax({
+//     url: "gettotalrank",
+//     method:'GET',
+//     error:(err)=>{console.log(err)},
+//     success: function (result) {
+//       rank_user_list = result;
+//       update_rank();
+//     }
+//   });
+// }
 function get_highrank(){
   now=3;
-  $.ajax({
-    url: "gethighrank",
-    method:'GET',
-    error:(err)=>{console.log(err)},
-    success: function (result) {
-      rank_user_list = result;
-      update_rank();
-    }
-  });
+  // $.ajax({
+  //   url: "gethighrank",
+  //   method:'GET',
+  //   error:(err)=>{console.log(err)},
+  //   success: function (result) {
+  //     rank_user_list = result;
+  //     update_rank();
+  //   }
+  // });
 }
 function update_rank(){
   rank_container.children[3].image =null;
@@ -2227,7 +2228,7 @@ function create_rank_container(){
   total_mask.alpha = 0.01;
   total_mask.addEventListener("mousedown",function(event){
     now=4;
-    get_totalrank();
+    //get_totalrank();
     rank_background.image = loader.getResult("rank_total");
   })
   total_mask.addEventListener("mouseover",function(event){
