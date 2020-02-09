@@ -1309,22 +1309,22 @@ function create_question_end_container() {
 //   });
 // }
 function question_end() {
-  // if(dolphin_list.length == 0){
-  //   stage.removeChild(question_container);
-  //   var a = score_board_text.x - (score_board.x - 512);
-  //   var b = score_board_text.y - (score_board.y - 169);
-  //   createjs.Tween.get(score_board).to({ x: 512, y: 169, scale: 0.65 }, 1000).call(() => {
-  //     question_end_container.visible = true;
-  //   })
-  //   createjs.Tween.get(score_board_text).to({ x: a + 19, y: b + 13, scale: 1.5 }, 1000).call(() => {
-  //     question_end_container.visible = true;
-  //     if(user_score + user.score_sum >= 77777 && reach==false)show_reach_animation();
-  //   })
-  //   clearInterval(question_timer);
-  //   clearInterval(score_update_timer);
-  //   //update_score();
-  // }
-  // else{
+  if(dolphin_list.length == 0){
+    stage.removeChild(question_container);
+    var a = score_board_text.x - (score_board.x - 512);
+    var b = score_board_text.y - (score_board.y - 169);
+    createjs.Tween.get(score_board).to({ x: 512, y: 169, scale: 0.65 }, 1000).call(() => {
+      question_end_container.visible = true;
+    })
+    createjs.Tween.get(score_board_text).to({ x: a + 19, y: b + 13, scale: 1.5 }, 1000).call(() => {
+      question_end_container.visible = true;
+      if(user_score + user.score_sum >= 77777 && reach==false)show_reach_animation();
+    })
+    clearInterval(question_timer);
+    clearInterval(score_update_timer);
+    //update_score();
+  }
+  else{
     back_container.visible=false;
     question_container.visible=false;
     dolphin_container.alpha=0;
@@ -1332,7 +1332,7 @@ function question_end() {
     dolphin_container.visible=true;
     now = -1;
     BGM_change();
-  //}
+  }
   now_score=user_score;
   score_board_text.text = (now == 1 ? "Score:" : "") + now_score + "";
   if (now == 2) {
@@ -1729,6 +1729,7 @@ function score_init() {
       
     });
   });
+  question_end();
 }
 function create_game_timer() {
   countdown_time = game_time;
