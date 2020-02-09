@@ -2409,3 +2409,4 @@ function labby_init() {
   open_bubble();
   open_bird();
 }
+//
