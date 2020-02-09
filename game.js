@@ -800,7 +800,7 @@ function load_source() {
     loader.on("complete", handleComplete);
     loader.on("error", handleError);
     loader.loadManifest(manifest);
-    //load_question_data();
+    load_question_data();
   }
   else{
     // $("#gameStage").css('display','none'); 
@@ -1453,18 +1453,24 @@ function next_question() {
 }
 
 function load_question() {
+  // question_list.push(new Array());
+  // question_list.push(new Array());
+  // question_list.push(new Array());
+  // for(var j =0;j<question_data.length;j++){
+  //   var q=question_data[j];
+  //   question_list[q.Type].push(new Question(q.Type,q.Q,q.Op.length == 0?new Array():q.Op.split(','),q.Ans.split(',')));
+  // }
+  // question_num = [0, 0, 0];
+  // question_index_list = new Array();
+  // for (var j = 0; j < 3; j++) {
+  //   question_num[j] = question_list[j].length;
+  // }
   question_list.push(new Array());
   question_list.push(new Array());
   question_list.push(new Array());
-  for(var j =0;j<question_data.length;j++){
-    var q=question_data[j];
-    question_list[q.Type].push(new Question(q.Type,q.Q,q.Op.length == 0?new Array():q.Op.split(','),q.Ans.split(',')));
-  }
-  question_num = [0, 0, 0];
+
+  question_num = [100, 100, 100];
   question_index_list = new Array();
-  for (var j = 0; j < 3; j++) {
-    question_num[j] = question_list[j].length;
-  }
 }
 function question_time_update() {
   if (!question_time_stop) {
@@ -2349,8 +2355,8 @@ function BGM_change(){
   
 }
 function labby_init() {
-  usergame_init();
-  getuser();
+  //usergame_init();
+  //getuser();
   now = 0;
   BGM_change();
   gamestart = false;
