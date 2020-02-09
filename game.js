@@ -1729,7 +1729,6 @@ function score_init() {
       
     });
   });
-  question_end();
 }
 function create_game_timer() {
   countdown_time = game_time;
@@ -1772,6 +1771,7 @@ function score_catch_animal_text_update() {
   score_catch_animal_text.text = ("  X  " + (score_catch_animal_num[1] >= 10 ? (score_catch_animal_num[1] + "") : (score_catch_animal_num[1] + "  ")) + "                       X  " + (score_catch_animal_num[2] >= 10 ? (score_catch_animal_num[2] + "") : (score_catch_animal_num[2] + "  ")) + "                           X  " + (score_catch_animal_num[3] >= 10 ? (score_catch_animal_num[3] + "") : (score_catch_animal_num[3] + "  ")) + "                        X  " + score_catch_animal_num[4] + "");
   if (num_score_fish == catch_fish.length) {
     //question_init();
+    question_end();
   }
 }
 function create_score_catch_animal_container() {
