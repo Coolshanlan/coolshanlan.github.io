@@ -1202,7 +1202,7 @@ function create_stage_element() {
   stage.addChild(score_board_text);
   stage.addChild(question_end_container);
   stage.addChild(rank_container);
-  create_rank_container();
+  //create_rank_container();
   create_back_container();
   create_leave_container();
   create_labbybutton();
