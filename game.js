@@ -40,7 +40,7 @@ var labbybutton_container;
 var leavebutton_source = new Array();
 var question_container;
 var back_container;
-var question_num = [0, 0, 0];
+var question_num = [100, 100, 100];
 var generate_bird;
 var rule_container;
 var option = new Array();
@@ -1770,7 +1770,7 @@ function create_catch_animal_container() {
 function score_catch_animal_text_update() {
   score_catch_animal_text.text = ("  X  " + (score_catch_animal_num[1] >= 10 ? (score_catch_animal_num[1] + "") : (score_catch_animal_num[1] + "  ")) + "                       X  " + (score_catch_animal_num[2] >= 10 ? (score_catch_animal_num[2] + "") : (score_catch_animal_num[2] + "  ")) + "                           X  " + (score_catch_animal_num[3] >= 10 ? (score_catch_animal_num[3] + "") : (score_catch_animal_num[3] + "  ")) + "                        X  " + score_catch_animal_num[4] + "");
   if (num_score_fish == catch_fish.length) {
-    question_init();
+    //question_init();
   }
 }
 function create_score_catch_animal_container() {
@@ -2400,7 +2400,7 @@ function labby_init() {
   labbybutton_container.visible = true;
   dolphin_container.visible=false;;
   for (var j = 0; j < 3; j++) {
-    question_num[j] = question_list[j].length;
+    question_num[j] = 100;
   }
   harpoon_list = new Array();
   open_fishmanwalk();
