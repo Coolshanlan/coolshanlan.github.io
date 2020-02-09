@@ -1,2 +1,2 @@
-# ncufresh 2019 coolgame
-ncufresh Web:https://ncufresh.ncu.edu.tw/
+# 2019 NCUFRESH coolgame
+NCUFRESH WEB:https://ncufresh.ncu.edu.tw/
