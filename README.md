@@ -1,4 +1,6 @@
 # [2019 NCUFRESH coolgame](https://coolshanlan.github.io/)
+NCUFresh is a website that can let freshman know more about NCU
+
 [2019 NCUFresh Website](https://ncufresh19.ncu.edu.tw/)
 
 [2020 NCUFresh Website](https://ncufresh20.ncu.edu.tw/)
