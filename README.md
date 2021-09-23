@@ -5,7 +5,7 @@
 
 [NOW NCUFresh Website](https://ncufresh.ncu.edu.tw/)
 ## ScreenShot
-<img src="https://github.com/Coolshanlan/coolshanlan.github.io/blob/master/demo_image/Labby.png?raw=true" width=31% board="2"><img src="https://github.com/Coolshanlan/coolshanlan.github.io/blob/master/demo_image/Game.png?raw=true" width=31% board="2"><img src="https://github.com/Coolshanlan/coolshanlan.github.io/blob/master/demo_image/End.png?raw=true" width=31% board="2">
+<img src="https://github.com/Coolshanlan/coolshanlan.github.io/blob/master/demo_image/Labby.png?raw=true" width=31% board="5"><img src="https://github.com/Coolshanlan/coolshanlan.github.io/blob/master/demo_image/Game.png?raw=true" width=31% board="5"><img src="https://github.com/Coolshanlan/coolshanlan.github.io/blob/master/demo_image/End.png?raw=true" width=31% board=5>
 
 ## Usage
 Press `Space` to shot harpoons
